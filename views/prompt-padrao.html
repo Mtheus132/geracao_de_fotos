@@ -102,26 +102,31 @@
 </head>
 <body class="bg-background text-on-surface font-body antialiased min-h-screen">
 <!-- TopNavBar -->
-<nav class="dark:bg-slate-900 rounded-2xl mt-4 mx-4 none shadow-[6px_6px_12px_rgba(0,0,0,0.08),-6px_-6px_12px_rgba(255,255,255,0.6)] dark:shadow-none sticky top-0 z-50 flex items-center justify-between px-8 py-4 max-w-7xl mx-auto md:mx-auto lg:mx-auto font-['Plus_Jakarta_Sans'] font-medium text-slate-700 dark:text-slate-300">
-<div class="flex items-center">
-<span class="text-2xl font-semibold tracking-tight text-[#6366f1] dark:text-indigo-400 mr-8">PromptBox</span>
-<div class="hidden md:flex gap-6">
-<a class="text-[#6366f1] dark:text-indigo-400 font-semibold active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Discover</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-[#6366f1] transition-colors duration-300 active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Library</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-[#6366f1] transition-colors duration-300 active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Favorites</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-[#6366f1] transition-colors duration-300 active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Community</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="relative neo-pressed rounded-full px-4 py-2 flex items-center bg-background">
-<span class="material-symbols-outlined text-outline-variant mr-2 text-sm">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder-outline-variant w-40 outline-none" placeholder="Search prompts..." type="text"/>
-</div>
-<button class="neo-raised rounded-full px-6 py-2 bg-background text-[#6366f1] font-medium active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all">
-                Create
-            </button>
-</div>
+<header class="bg-slate-900 dark:bg-slate-950 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight docked full-width top-0 shadow-[6px_6px_12px_rgba(0,0,0,0.4),-6px_-6px_12px_rgba(255,255,255,0.05)] flex justify-between items-center w-full px-8 py-4 sticky z-50">
+<!-- Brand Logo -->
+<div class="text-2xl font-semibold text-indigo-400 tracking-tighter flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+            PromptBox
+        </div>
+
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-indigo-400 border-b-2 border-indigo-500 pb-1 flex flex-col hover:text-indigo-300 transition-colors duration-200" href="#">
+Inicio            </a>
+<a class="text-slate-500 hover:text-indigo-300 transition-colors duration-200" href="/views/prompt-padrao.html">
+                Prompt Padrão
+            </a>
+<a class="text-slate-500 hover:text-indigo-300 transition-colors duration-200" href="#">
+                Modelos Humanos
+            </a>
+            <a class="text-slate-500 hover:text-indigo-300 transition-colors duration-200" href="#">
+                Imagens Ambientadas 
+            </a>
 </nav>
+<!-- Trailing Action & Search -->
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-slate-900 neo-inset-dark rounded-full px-4 py-2">
+</header>
 <!-- Main Content -->
 <main class="max-w-7xl mx-auto px-4 md:px-8 py-16">
 <!-- Hero Section -->
