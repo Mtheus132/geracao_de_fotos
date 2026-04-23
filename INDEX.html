@@ -1,193 +1,250 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>PromptBox v7.0</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-    }
-
-    .container {
-      padding: 24px;
-    }
-
-    /* Header */
-    .header {
-      background: white;
-      border-radius: 16px;
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .header h1 {
-      font-size: 18px;
-      margin: 0;
-    }
-
-    .icons {
-      display: flex;
-      gap: 12px;
-      color: #6b7280;
-      font-size: 18px;
-    }
-
-    /* Main */
-    .main {
-      text-align: center;
-      margin-top: 32px;
-    }
-
-    .main h2 {
-      font-size: 32px;
-      font-weight: bold;
-      font-style: italic;
-      margin: 0;
-    }
-
-    .main p {
-      color: #6b7280;
-      margin-top: 8px;
-    }
-
-    /* Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    /* Card */
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: #4b5563;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    /* Button */
-    .btn {
-      display: inline-block;
-      margin-top: 16px;
-      background: #3b82f6;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #2563eb;
-    }
-
-  </style>
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PromptBox - High-end AI Photography Prompts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#585a68",
+                        "primary": "#6366f1",
+                        "primary-fixed-dim": "#a5b4fc",
+                        "on-surface": "#2e3040",
+                        "tertiary": "#7c3aed",
+                        "error-container": "#fee2e2",
+                        "secondary-container": "#d8dae6",
+                        "error": "#dc2626",
+                        "surface-container-high": "#dcdee4",
+                        "inverse-primary": "#a5b4fc",
+                        "on-primary-fixed-variant": "#4338ca",
+                        "on-background": "#2e3040",
+                        "background": "#e8eaf0",
+                        "surface-tint": "#6366f1",
+                        "inverse-on-surface": "#e8eaf0",
+                        "surface-container": "#e2e4ea",
+                        "surface-dim": "#d4d6dc",
+                        "primary-fixed": "#e0e2ff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#e5e7ed",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c4b5fd",
+                        "on-tertiary-fixed-variant": "#5b21b6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8a8c9a",
+                        "surface-container-highest": "#d6d8de",
+                        "surface": "#e8eaf0",
+                        "tertiary-fixed": "#ede9fe",
+                        "on-tertiary-fixed": "#2e1065",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#d8dae6",
+                        "on-secondary-fixed-variant": "#404252",
+                        "tertiary-container": "#a78bfa",
+                        "on-error-container": "#991b1b",
+                        "secondary": "#6c6e7e",
+                        "surface-container-lowest": "#f0f2f8",
+                        "on-tertiary-container": "#3b1f63",
+                        "on-secondary-container": "#585a68",
+                        "inverse-surface": "#2e3040",
+                        "secondary-fixed-dim": "#b8baca",
+                        "surface-variant": "#dcdee4",
+                        "surface-bright": "#edeef4",
+                        "on-secondary-fixed": "#1a1b26",
+                        "primary-container": "#818cf8",
+                        "outline-variant": "#d0d2dc",
+                        "on-primary-fixed": "#1e1b4b",
+                        "on-primary-container": "#e0e2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-raised {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .neo-inset {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+        .dark .neo-raised-dark {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.4), -6px -6px 12px rgba(255,255,255,0.05);
+        }
+        .dark .neo-inset-dark {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.3), inset -4px -4px 8px rgba(255,255,255,0.05);
+        }
+    </style>
 </head>
+<body class="bg-slate-950 text-slate-200 font-body min-h-screen selection:bg-indigo-500/30">
+<!-- TopAppBar -->
+<header class="bg-slate-900 dark:bg-slate-950 font-['Plus_Jakarta_Sans'] text-sm font-medium tracking-tight docked full-width top-0 shadow-[6px_6px_12px_rgba(0,0,0,0.4),-6px_-6px_12px_rgba(255,255,255,0.05)] flex justify-between items-center w-full px-8 py-4 sticky z-50">
+<!-- Brand Logo -->
+<div class="text-2xl font-semibold text-indigo-400 tracking-tighter flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+            PromptBox
+        </div>
 
-<body>
-
-<div class="container">
-
-  <!-- Header -->
-  <div class="header">
-    <h1>PromptBox de Relojoaria Premium v7.0</h1>
-    <div class="icons">
-      ☁️ ↩️ ↪️ 💻 👁️ 🔗
-    </div>
-  </div>
-
-  <!-- Main -->
-  <div class="main">
-    <h2>PromptBox</h2>
-    <p>Biblioteca premium de prompts e setups para fotografia de relojoaria de alto padrão</p>
-  </div>
-
-  <!-- Cards -->
-  <div class="grid">
-
-    <div class="card">
-      <h3>01. The Master Hero Shot</h3>
-      <p>
-        Editorial close-up de um relógio de luxo em estilo publicitário premium.
-        Iluminação com softbox difuso superior esquerdo, contraste com negative fill
-        e textura ultra nítida em metal escovado.
-      </p>
-      <a href="#" class="btn">Usar Prompt</a>
-    </div>
-
-    <div class="card">
-      <h3>02. Biblioteca de Prompts</h3>
-      <p>
-        Templates prontos para fotografia de produtos premium com padrão de estúdio,
-        macro detalhado e estética editorial dramática.
-      </p>
-      <a href="#" class="btn">Explorar</a>
-    </div>
-
-    <div class="card">
-      <h3>03. Guia de Setups de Luz</h3>
-      <p>
-        Escolha entre strip light, softbox frontal, rim light ou low-key dramático
-        para obter o efeito ideal em produtos metálicos.
-      </p>
-      <a href="#" class="btn">Ver Guia</a>
-    </div>
-
-    <div class="card">
-      <h3>04. Video & Technical Suite</h3>
-      <p>
-        Revelações cinematográficas, reconstrução macro e correções técnicas
-        avançadas para máxima qualidade visual.
-      </p>
-      <a href="#" class="btn">Aplicar</a>
-    </div>
-
-    <div class="card">
-      <h3>05. Professional Secrets</h3>
-      <p>
-        Técnicas como regra 10:10, double diffusion e CPL para controle total
-        de reflexos e simetria.
-      </p>
-      <a href="#" class="btn">Aprender</a>
-    </div>
-
-    <div class="card">
-      <h3>06. Aplicação Comercial</h3>
-      <p>
-        Estratégias para e-commerce, atacado e campanhas que aumentam
-        conversão e percepção de valor.
-      </p>
-      <a href="#" class="btn">Ver Estratégias</a>
-    </div>
-
-  </div>
-
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-indigo-400 border-b-2 border-indigo-500 pb-1 flex flex-col hover:text-indigo-300 transition-colors duration-200" href="#">
+Inicio            </a>
+<a class="text-slate-500 hover:text-indigo-300 transition-colors duration-200" href="/views/prompt-padrao.html">
+                Prompt Padrão
+            </a>
+<a class="text-slate-500 hover:text-indigo-300 transition-colors duration-200" href="#">
+                Modelos Humanos
+            </a>
+</nav>
+<!-- Trailing Action & Search -->
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-slate-900 neo-inset-dark rounded-full px-4 py-2">
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-12 pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-16 text-center flex flex-col items-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 neo-inset-dark text-indigo-400 text-xs font-semibold tracking-wider uppercase mb-6">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+                A Biblioteca Definitiva
+            </div>
+<h1 class="text-4xl md:text-6xl font-headline font-bold text-slate-100 tracking-tight mb-6 max-w-3xl leading-tight">
+                Eleve sua fotografia AI a um nível <span class="text-indigo-400">profissional.</span>
+</h1>
+<p class="text-slate-400 max-w-2xl text-lg font-medium">
+                Uma curadoria tátil de prompts de alta fidelidade para relógios de luxo, moda editorial e produtos premium.
+            </p>
+</section>
+<!-- Bento Grid / Cards Section - Arranged Horizontally -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+<!-- Card 1: Prompts Padrão -->
+<article class="bg-slate-900 rounded-3xl p-6 neo-raised-dark flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative neo-inset-dark bg-slate-950">
+<img alt="Prompts Padrão" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHB08xmWEK_YLfHcdmUx89M15DmEC3kshJIu27FJUwx7OkfYWVzNk-VFAaFc-cxvbeBamxbO7N6BqEFJG9iTRMRxX2atMs5jN_8hcWnzOKK9ldkleSghb6CZiX2Nk_UV2JdMuLIVNflntRxcF1sfijjFlFSvH_wLP1holxUVZxesNZibKK-DeL12byDoVvo0PfDbyV1TtgGSY6bmxRs_nUUGaTyi-dttScVyfH5hWo6vT_qhougK3e5ZWLq2pi3WLjN4ZRsbE37N7C"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<span class="bg-indigo-500/20 text-indigo-300 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold border border-indigo-500/30">
+                            1.2k Prompts
+                        </span>
+<a href="/views/prompt-padrao.html"><button class="w-10 h-10 rounded-full bg-slate-900 neo-raised-dark flex items-center justify-center text-indigo-400 group-hover:text-indigo-300">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</a>
 </div>
-
-</body>
-</html>
+</div>
+<h2 class="text-xl font-bold font-headline text-slate-100 mb-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-indigo-500">widgets</span>
+                    Prompts Padrão
+                </h2>
+<p class="text-sm text-slate-400 font-medium leading-relaxed flex-grow">
+                    Focados em produtos isolados com iluminação de estúdio, ideal para catálogos de luxo.
+                </p>
+</article>
+<!-- Card 2: Imagens Ambientadas -->
+<article class="bg-slate-900 rounded-3xl p-6 neo-raised-dark flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative neo-inset-dark bg-slate-950">
+<img alt="Imagens Ambientadas" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHQUdFyEkevGHNeMjZcyrCUdTWT-yc0F6R2_6PW2MksBjy465zSF1A2MJFwJ2_Xk8qEHX4gCpNVRVxMkzjQ-lkHG2FjCwDjPXAy6pY5tZIBo6rgtlVhrmiamToVjH6mBS-VO1x_R0ZVkhSrODi8qAqhO4aEhlk6VsCNbSBIwebPKXX_bh1oxNAf3840AYAWjKmLcGTZoUiLTP6AgvCxDDBWajJoUzTDObvPGMd--XLwEfQ4s3DYU6hlSk2A4mno6yadn1qK2hxPTeQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<span class="bg-tertiary/20 text-tertiary-fixed-dim backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold border border-tertiary/30">
+                            850 Prompts
+                        </span>
+<button class="w-10 h-10 rounded-full bg-slate-900 neo-raised-dark flex items-center justify-center text-tertiary group-hover:text-purple-400">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<h2 class="text-xl font-bold font-headline text-slate-100 mb-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">wallpaper</span>
+                    Imagens Ambientadas
+                </h2>
+<p class="text-sm text-slate-400 font-medium leading-relaxed flex-grow">
+                    Cenários ricos em detalhes e composições editoriais que contam a história do produto.
+                </p>
+</article>
+<!-- Card 3: Modelos Humanos -->
+<article class="bg-slate-900 rounded-3xl p-6 neo-raised-dark flex flex-col group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative neo-inset-dark bg-slate-950">
+<img alt="Modelos Humanos" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0pePcG7t1WkT4IqY9sBx8IswUnFxImiuKqPCbOLXF3hcIeGLBRaaK-c2eqdg6zEfxN7NYSjH4QuT5CA_IZSLHFO02ijJe-R67Wl7bFvnKOwkXxTFpLur_RoEghzuMHIbo4dcK8ErpF80jxbyYFkqG9IXzygeajere-QfWUmmRozTUwwzS6EAQMFkf4r4oBJFhyjMtzoxEK0bPLEZCSurAuBSYt_OUsnE7QVCxBYVbgiIFR4L8UgxlPVTUzyjjEcTc7jemnWcJ1zYN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<span class="bg-blue-500/20 text-blue-300 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold border border-blue-500/30">
+                            540 Prompts
+                        </span>
+<button class="w-10 h-10 rounded-full bg-slate-900 neo-raised-dark flex items-center justify-center text-blue-400 group-hover:text-blue-300">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<h2 class="text-xl font-bold font-headline text-slate-100 mb-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400">face</span>
+                    Modelos Humanos
+                </h2>
+<p class="text-sm text-slate-400 font-medium leading-relaxed flex-grow">
+                    Mãos hiper-realistas e retratos editoriais de alta costura com interação genuína.
+                </p>
+</article>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="bg-slate-900 pt-16 pb-24 md:pb-12 px-8 border-t border-slate-800/50">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<!-- Branding and Copyright -->
+<div class="flex flex-col gap-4">
+<div class="text-2xl font-semibold text-indigo-400 tracking-tighter flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+                    PromptBox
+                </div>
+<p class="text-slate-500 text-sm font-medium">
+                    © 2024 PromptBox. Sculpted with Silk UI.
+                </p>
+</div>
+<!-- Footer Links -->
+<nav class="grid grid-cols-2 lg:flex gap-x-12 gap-y-4">
+<div class="flex flex-col gap-3">
+<a class="text-slate-400 hover:text-indigo-400 text-sm transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-indigo-400 text-sm transition-colors duration-200" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-slate-400 hover:text-indigo-400 text-sm transition-colors duration-200" href="#">API Documentation</a>
+<a class="text-slate-400 hover:text-indigo-400 text-sm transition-colors duration-200" href="#">Help Center</a>
+</div>
+</nav>
+</div>
+</footer>
+<!-- BottomNavBar (Visible only on mobile) -->
+<nav class="md:hidden bg-slate-950 font-['Plus_Jakarta_Sans'] text-[10px] font-medium fixed bottom-0 w-full rounded-t-3xl shadow-[0_-8px_16px_rgba(0,0,0,0.3)] z-50 flex justify-around items-center px-6 pb-6 pt-3 border-t border-slate-800/30">
+<button class="flex flex-col items-center justify-center text-indigo-400 bg-slate-800/50 rounded-xl p-2 shadow-[inset_4px_4px_8px_rgba(0,0,0,0.3)] active:scale-95 transition-transform w-16">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">explore</span>
+            Explorar
+        </button>
+<button class="flex flex-col items-center justify-center text-slate-500 p-2 hover:bg-slate-800/30 rounded-xl active:scale-95 transition-transform w-16">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+            Favoritos
+        </button>
+<button class="flex flex-col items-center justify-center text-slate-500 p-2 hover:bg-slate-800/30 rounded-xl active:scale-95 transition-transform w-16">
+<span class="material-symbols-outlined mb-1">add_circle</span>
+            Criar
+        </button>
+<button class="flex flex-col items-center justify-center text-slate-500 p-2 hover:bg-slate-800/30 rounded-xl active:scale-95 transition-transform w-16">
+<span class="material-symbols-outlined mb-1">person</span>
+            Perfil
+        </button>
+</nav>
+</body></html>

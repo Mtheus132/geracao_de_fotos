@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PromptBox - Premium Watch Photography Prompts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="/js/script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                     "on-primary-fixed": "#1e1b4b",
+                      "inverse-on-surface": "#e8eaf0",
+                      "background": "#1a1a2e",
+                      "surface-container-lowest": "#151525",
+                      "surface-container": "#202038",
+                      "surface-container-highest": "#282845",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#b8baca",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#6c6e7e",
+                      "secondary-fixed": "#d8dae6",
+                      "on-tertiary-container": "#3b1f63",
+                      "primary-fixed": "#e0e2ff",
+                      "on-tertiary-fixed-variant": "#5b21b6",
+                      "on-primary-container": "#e0e2ff",
+                      "outline": "#8a8c9a",
+                      "on-primary-fixed-variant": "#4338ca",
+                      "surface": "#1a1a2e",
+                      "on-tertiary-fixed": "#2e1065",
+                      "tertiary": "#7c3aed",
+                      "primary-fixed-dim": "#a5b4fc",
+                      "on-error-container": "#991b1b",
+                      "on-secondary-fixed": "#1a1b26",
+                      "tertiary-fixed-dim": "#c4b5fd",
+                      "on-background": "#e2e8f0",
+                      "on-secondary-fixed-variant": "#404252",
+                      "inverse-primary": "#a5b4fc",
+                      "surface-tint": "#6366f1",
+                      "surface-container-high": "#24243f",
+                      "on-surface": "#e2e8f0",
+                      "on-primary": "#ffffff",
+                      "error-container": "#fee2e2",
+                      "primary": "#818cf8",
+                      "surface-dim": "#151525",
+                      "primary-container": "#4f46e5",
+                      "surface-container-low": "#1d1d33",
+                      "outline-variant": "#475569",
+                      "surface-variant": "#24243f",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#a78bfa",
+                      "on-surface-variant": "#94a3b8",
+                      "error": "#dc2626",
+                      "on-secondary-container": "#94a3b8",
+                      "inverse-surface": "#e2e8f0",
+                      "secondary-container": "#33334d",
+                      "surface-bright": "#282845",
+                      "tertiary-fixed": "#ede9fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.5rem",
+                      "lg": "1rem",
+                      "xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label": [
+                              "Plus Jakarta Sans"
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .neo-raised {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .neo-pressed {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+        body {
+            background-color: #e8eaf0; /* Fallback */
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased min-h-screen">
+<!-- TopNavBar -->
+<nav class="dark:bg-slate-900 rounded-2xl mt-4 mx-4 none shadow-[6px_6px_12px_rgba(0,0,0,0.08),-6px_-6px_12px_rgba(255,255,255,0.6)] dark:shadow-none sticky top-0 z-50 flex items-center justify-between px-8 py-4 max-w-7xl mx-auto md:mx-auto lg:mx-auto font-['Plus_Jakarta_Sans'] font-medium text-slate-700 dark:text-slate-300">
+<div class="flex items-center">
+<span class="text-2xl font-semibold tracking-tight text-[#6366f1] dark:text-indigo-400 mr-8">PromptBox</span>
+<div class="hidden md:flex gap-6">
+<a class="text-[#6366f1] dark:text-indigo-400 font-semibold active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Discover</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#6366f1] transition-colors duration-300 active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Library</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#6366f1] transition-colors duration-300 active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Favorites</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#6366f1] transition-colors duration-300 active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all" href="#">Community</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative neo-pressed rounded-full px-4 py-2 flex items-center bg-background">
+<span class="material-symbols-outlined text-outline-variant mr-2 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder-outline-variant w-40 outline-none" placeholder="Search prompts..." type="text"/>
+</div>
+<button class="neo-raised rounded-full px-6 py-2 bg-background text-[#6366f1] font-medium active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] transition-all">
+                Create
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+<!-- Hero Section -->
+<header class="text-center mb-24 max-w-3xl mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full neo-pressed bg-background text-primary text-sm font-medium mb-8">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span>The Silk Collection</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-6 drop-shadow-sm">
+                PromptBox
+            </h1>
+<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                Biblioteca premium de prompts e setups para fotografia de relojoaria de alto padrão. Extruded light and shadows.
+            </p>
+</header>
+<!-- Prompt Gallery Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="bg-background rounded-[2rem] p-8 neo-raised flex flex-col h-full md:col-span-2 lg:col-span-3">
+
+<div class="mb-6 flex justify-between items-start">
+<h3 class="text-xl font-semibold text-on-surface">01. The Master Hero Shot</h3>
+<button class="w-10 h-10 rounded-full neo-raised flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">bookmark_border</span>
+</button>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 flex-grow" >
+<div class="neo-pressed bg-background rounded-xl p-6">
+<p class="target-text text-sm text-on-surface-variant leading-relaxed font-mono">
+                        "Fotografia macro comercial de um relógio mecânico complexo (ex: A. Lange &amp; Söhne ou Patek Philippe) em uma superfície de lousa preta fosca. 
+                        
+                        Câmera: Hasselblad H6D-100c com lente macro 120mm. Foco perfeitamente nítido no turbilhão ou ponteiros principais, com um leve desfoque na pulseira (f/8 a f/11). 
+                        
+                        Iluminação: Setup dramático 'chiaroscuro'. Um softbox estreito posicionado acima e ligeiramente atrás do relógio (rim light) para criar um contorno metálico brilhante no bisel. Um refletor branco suave à esquerda para preencher detalhes sutis no mostrador..."
+                    </p>
+</div>
+<div class="rounded-xl overflow-hidden neo-raised bg-background flex items-center justify-center relative min-h-[250px]">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-tint/10 to-transparent z-10 pointer-events-none mix-blend-overlay"></div>
+<img alt="Macro commercial photography of a mechanical watch" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGcV2vCeXkSBDfaUZ5Agjgc6kBsT9aoCyunpXMcotM-IjqmlKv8iKGZPXb47tHXXAv_pLb_jMrl9RpEjlwpLbg1XQN_KEWueYg-yAiepjCBQVD5x358AK54pE8j16O7xKqpuCgi9VjWhHSOX82DIYXs7P7slvK-VJoKo7QU9rHiVllzWRicS6_ITC0SRhRwGpYc-jsMxjWqwDu3giENyJrrrQo2UWwaOoCroCuXAC6NKDYyjd62ONqhuVr_AV2F8fl9wCtlgxDz9l9"/>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="copy-btn  flex-1 neo-raised rounded-xl py-4 bg-background text-primary font-semibold flex items-center justify-center gap-2 active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm" data-weight="fill">content_copy</span>
+                   <a class="btn"></a> Copiar Prompt
+                </button>
+<button class="w-14 h-14 neo-raised rounded-xl bg-background text-primary font-semibold flex items-center justify-center active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-background rounded-[2rem] p-8 neo-raised flex flex-col h-full md:col-span-2 lg:col-span-3">
+<div class="mb-6 flex justify-between items-start">
+<h3 class="text-xl font-semibold text-on-surface">02. Tilted Watch</h3>
+<button class="w-10 h-10 rounded-full neo-raised flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">bookmark_border</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 flex-grow">
+<div class="neo-pressed bg-background rounded-xl p-6">
+<p class="target-text text-sm text-on-surface-variant leading-relaxed font-mono">
+                        "Fotografia de produto em estúdio, relógio esportivo de luxo em aço inoxidável suspenso no ar em um ângulo de 45 graus. Fundo cinza médio contínuo (Cove background).
+                        
+                        Câmera: Phase One XF com IQ4 150MP, lente Schneider Kreuznach 120mm Macro. 
+                        
+                        Iluminação: Iluminação perfeitamente uniforme estilo 'catálogo suíço'. Dois grandes painéis difusores laterais criam reflexos retangulares simétricos nas laterais polidas da caixa e da pulseira. Um refletor posicionado abaixo para iluminar as frestas da pulseira. Sem sombras duras visíveis..."
+                    </p>
+</div>
+<div class="rounded-xl overflow-hidden neo-raised bg-background flex items-center justify-center relative min-h-[250px]">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-tint/10 to-transparent z-10 pointer-events-none mix-blend-overlay"></div>
+<img alt="Studio product photography of a luxury sports watch suspended at 45 degrees" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVrxiBq6Q7oGxvH9R0it72SDuCSLhWdk2sDn_aigXmvKqAI8LWs37L3YYJN5gmte1oKEjdBJlFPBQ8jCOfODRgXCvNSIAP1R5u2v_DJVW4pazB1_qj2DBDk_f8rwe9A0fPKcOk6bIjzvyxDKaztaKmQQrLTEKh0bu6FGPyF7zJiQhAo87LirXWZMJ8Gwwj2xwEbC89sE9hsIUmE8UXQ3Qpnj8nuGwd0pxU2QXxa-Vth-O25etYt8Mx2p6Q85Lx9Z02AD5peZnRceDj"/>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="copy-btn flex-1 neo-raised rounded-xl py-4 bg-background text-primary font-semibold flex items-center justify-center gap-2 active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm" data-weight="fill">content_copy</span>
+                    Copiar Prompt
+                </button>
+<button class="w-14 h-14 neo-raised rounded-xl bg-background text-primary font-semibold flex items-center justify-center active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-background rounded-[2rem] p-8 neo-raised flex flex-col h-full md:col-span-2 lg:col-span-3">
+<div class="mb-6 flex justify-between items-start">
+<h3 class="text-xl font-semibold text-on-surface">03. Detalhe Macro - Visor zoom</h3>
+<button class="w-10 h-10 rounded-full neo-raised flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">bookmark_border</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 flex-grow">
+<div class="neo-pressed bg-background rounded-xl p-6">
+<p class="target-text text-sm text-on-surface-variant leading-relaxed font-mono">
+                        "Fotografia ultra-macro focando exclusivamente na textura do mostrador de um relógio de luxo (padrão Guilloché, fibra de carbono ou esmalte). 
+                        
+                        Câmera: Câmera Mirrorless Full Frame (ex: Sony A7RV) com lente macro de ampliação 2:1 ou superior. Focus stacking ativado para garantir que cada micro-detalhe da textura esteja em foco nítido. 
+                        
+                        Iluminação: Luz contínua LED direcionada tangencialmente à superfície do mostrador (raking light) para exagerar o relevo e a textura 3D da padronagem..."
+                    </p>
+</div>
+<div class="rounded-xl overflow-hidden neo-raised bg-background flex items-center justify-center relative min-h-[250px]">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-tint/10 to-transparent z-10 pointer-events-none mix-blend-overlay"></div>
+<img alt="Ultra-macro photography focusing on the texture of a luxury watch dial" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKkYbMxKNPbbrEtq2zIqrvnmCD4mRpVrko8t_zxCDtFp5ZTn78-OGNpJzG2-TkfN3uF2v9NUEDtT6zXyBFz4-JIuht3YBlBSYXVAl_Sf0r1yemjbdMsSx6ve8BiuUJiCMgqgVwlhP3Ss2UW5XerNPLvYMBoU8cr-zM8LdcT7La2hQDD6ojzRTfmX-C1dhkd_YZ2KYKF7LtFn68GjkNuZ_1XKqC9brSz39ZrKLanCpdVV029AOWpH7mjEx6TjhTtlSwtBQiAffFhOm1"/>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="copy-btn flex-1 rounded-xl py-4 bg-background text-primary font-semibold flex items-center justify-center gap-2 active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm" data-weight="fill">content_copy</span>
+                    Copiar Prompt
+                </button>
+<button class="w-14 h-14 neo-raised rounded-xl bg-background text-primary font-semibold flex items-center justify-center active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-background rounded-[2rem] p-8 neo-raised flex flex-col h-full md:col-span-2 lg:col-span-3">
+<div class="mb-6 flex justify-between items-start">
+<h3 class="text-xl font-semibold text-on-surface">04. Editorial Dramático (Ambiente Lifestyle)</h3>
+<div class="flex gap-3">
+<span class="px-3 py-1 neo-pressed rounded-full text-xs font-medium text-tertiary">Lifestyle</span>
+<button class="w-10 h-10 rounded-full neo-raised flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">bookmark_border</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 flex-grow">
+<div class="neo-pressed bg-background rounded-xl p-6">
+<p class="target-text text-sm text-on-surface-variant leading-relaxed font-mono">
+                            "Fotografia editorial de relógio de mergulho premium ambientado em um cenário de aventura sofisticado. O relógio repousa sobre uma madeira à deriva molhada (driftwood) escura.
+                            
+                            Atmosfera: Cinematográfica, misteriosa, textura rica. Gotas de água minúsculas na caixa do relógio capturando a luz.
+                            
+                            Câmera: Leica SL2 com lente 90mm f/2. Profundidade de campo rasa (f/2.8) criando um belo bokeh no fundo.
+                            
+                            Iluminação: 'Moody lighting'. Luz principal suave e difusa vindo do alto à esquerda (simulando luz natural de janela em dia nublado). Uma luz de acento (snoot) fria e direcional focada apenas no cristal de safira para criar um brilho nítido. Sombras profundas e texturizadas na madeira."
+                        </p>
+</div>
+<div class="rounded-xl overflow-hidden neo-raised bg-background flex items-center justify-center relative">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-tint/10 to-transparent z-10 pointer-events-none mix-blend-overlay"></div>
+<img alt="Luxury dive watch on wet dark driftwood with moody lighting and water droplets, soft bokeh background" class="w-full h-full object-cover" data-alt="Macro photography of luxury dive watch resting on wet textured driftwood with moody directional lighting highlighting the sapphire crystal and tiny water droplets, shallow depth of field, elegant cinematic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKURnOOT4NXHtOmEF6upqCYhTBuJAxMzBrrN4tJAflpioq-JlgLz2kWsZER_K9BVB3cCkypYDdD7lpXZxi4kNXWlh3LXaE6mXtT7ywhtk5zQLyFELMwS-xh-J4o8Q9mYwn7jwT24k3TCcx6UOsAwVcg-7NzwxkVbvCjeT5nGMgtD9EXfRlddyGlSkQxZ7T_JcxHaI-wbeG5UUb4nV9y8yfCrBaGXC3T-DemEndDtzUC-B8JUEvfNObY5KjoqoOo6bucaGEhF2NRVAD"/>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="copy-btn flex-1 neo-raised rounded-xl py-4 bg-background text-primary font-semibold flex items-center justify-center gap-2 active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm" data-weight="fill">content_copy</span>
+                        Copiar Prompt 
+                    </button>
+<button class="w-14 h-14 neo-raised rounded-xl bg-background text-primary font-semibold flex items-center justify-center active:neo-pressed transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#e8eaf0] dark:bg-slate-900 w-full mt-20 none shadow-[inset_0px_4px_8px_rgba(0,0,0,0.03)] w-full py-12 px-8 flex flex-col md:flex-row items-center justify-between gap-6 font-['Plus_Jakarta_Sans'] text-sm text-[#6366f1] dark:text-indigo-400">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-semibold text-[#6366f1]">PromptBox</span>
+<span class="text-slate-400">© 2024 PromptBox. Sculpted with Silk UI.</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6 opacity-80 hover:opacity-100 transition-opacity">
+<a class="text-slate-400 hover:text-[#7c3aed] transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-[#7c3aed] transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-[#7c3aed] transition-colors" href="#">API Documentation</a>
+<a class="text-slate-400 hover:text-[#7c3aed] transition-colors" href="#">Help Center</a>
+</div>
+</footer>
+</body></html>

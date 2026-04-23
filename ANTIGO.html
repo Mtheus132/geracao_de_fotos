@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>PromptBox v7.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001d33",
+                    "on-tertiary": "#11334d",
+                    "on-secondary-fixed-variant": "#494643",
+                    "on-primary": "#452b03",
+                    "on-secondary": "#33302d",
+                    "surface-variant": "#353534",
+                    "primary-container": "#c29967",
+                    "inverse-primary": "#7a582c",
+                    "on-secondary-fixed": "#1d1b19",
+                    "on-primary-fixed": "#2a1700",
+                    "surface-dim": "#131313",
+                    "on-tertiary-container": "#193953",
+                    "outline": "#9b8f82",
+                    "on-primary-container": "#4d3108",
+                    "inverse-on-surface": "#313030",
+                    "primary": "#ebbf8a",
+                    "tertiary": "#abcaea",
+                    "surface": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#201f1f",
+                    "tertiary-fixed": "#cee5ff",
+                    "primary-fixed": "#ffddb7",
+                    "on-secondary-container": "#bdb7b3",
+                    "tertiary-fixed-dim": "#abcaea",
+                    "error-container": "#93000a",
+                    "surface-tint": "#ebbf8a",
+                    "on-tertiary-fixed-variant": "#2b4964",
+                    "background": "#131313",
+                    "on-primary-fixed-variant": "#5f4117",
+                    "on-background": "#e5e2e1",
+                    "surface-bright": "#3a3939",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface-variant": "#d3c4b6",
+                    "surface-container-highest": "#353534",
+                    "primary-fixed-dim": "#ebbf8a",
+                    "on-surface": "#e5e2e1",
+                    "outline-variant": "#4f453b",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary": "#cbc5c1",
+                    "secondary-container": "#4c4845",
+                    "tertiary-container": "#85a3c2",
+                    "secondary-fixed": "#e8e1dd",
+                    "secondary-fixed-dim": "#cbc5c1",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+    }
+
+    .container {
+      padding: 24px;
+    }
+
+    /* Header */
+    .header {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .header h1 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .icons {
+      display: flex;
+      gap: 12px;
+      color: #6b7280;
+      font-size: 18px;
+    }
+
+    /* Main */
+    .main {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .main h2 {
+      font-size: 32px;
+      font-weight: bold;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .main p {
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    /* Card */
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 10%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Button */
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: #3b82f6;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>PromptBox de Relojoaria Premium - Matheus Gabriel </h1>
+    <div class="icons">
+      ☁️ ↩️ ↪️ 💻 👁️ 🔗
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <h2>PromptBox</h2>
+    <p>Biblioteca premium de prompts e setups para fotografia de relojoaria de alto padrão</p>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid">
+
+    <div class="card">
+      <h3>01. The Master Hero Shot</h3>
+      <p>
+Editorial close-up hero shot of a luxury wristwatch. High-end commercial advertisement style, hyper-realistic, 8k resolution. The watch is positioned perfectly upright, centered, and fully aligned. Lighting features a large diffused softbox from the top-left, creating smooth, clean gradient highlights on the bezel and dial. Deep negative fill technique creates rich black shadows on metallic edges, eliminating grey haze and unwanted reflections. High-definition brushed metal textures and scratch-free sapphire crystal. Powerful silhouette against a pure white background. Shot as if using a Hasselblad X2D with a 100mm Macro lens, f/11 aperture for edge-to-edge sharpness, and ISO 100.
+      </p>
+      <a href="#" class="btn">Usar Prompt</a>
+    </div>
+
+    <div class="card">
+      <h3>02. Tilted watch
+</h3>
+      <p>
+Editorial close-up hero shot of a luxury wristwatch. High-end commercial advertisement style, hyper-realistic, 8k resolution. The watch is positioned 3/4 Angle, tilted to right side. Lighting features a large diffused softbox from the top-left, creating smooth, clean gradient highlights on the bezel and dial. Deep negative fill technique creates rich black shadows on metallic edges, eliminating grey haze and unwanted reflections. High-definition brushed metal textures and scratch-free sapphire crystal. Powerful silhouette against a pure white background. Shot as if using a Hasselblad X2D with a 100mm Macro lens, f/11 aperture for edge-to-edge sharpness, and ISO 100.    
+      </p>
+      <a href="#" class="btn">copiar</a>
+    </div>
+
+    <div class="card">
+      <h3>03. Detalhe Macro - Visor zoom</h3>
+      <p>
+Extreme macro product photography focusing exclusively on the watch dial and crystal texture, shot on Hasselblad H6D-100c with a 120mm macro lens at minimum focusing distance to achieve a 1:1 magnification ratio. The composition is a tight, oversized crop of the watch face, capturing the intricate micro-topography of the dial, applied indices, and the crisp edges of the hands. Lighting utilizes a single strip light at a 45-degree lateral angle to rake across the surface, casting subtle shadows that define the depth of engravings and the grain of the sunray or matte finish. A secondary soft fill prevents harsh shadows in the recessed areas. The focus is razor-sharp on the sub-millimeter details of the visor and complications, revealing manufacturing precision and material quality. Professional 3-point lighting setup, pure white background, zero lens flare, 8K ultra-high resolution, highlighting the tactile luxury of Swiss watchmaking craftsmanship.
+      </p>
+      <a href="#" class="btn">Copiar</a>
+    </div>
+
+    <div class="card">
+      <h3>04. Editorial Dramático
+</h3>
+      <p>
+        dramatic hero shot product photography, luxury timepiece editorial style, shot on Phase One IQ4 150MP, 80mm macro lens, f/5.6, ISO 50, dramatic side lighting with single softbox, strong contrast with subtle shadows, deep black background with gradient fade, product elevated on subtle reflective surface, long exposure light painting on metal surfaces, cinematic depth, aspirational collector's watch mood, high-fashion editorial aesthetic, razor-sharp focus on dial details, bokeh background, cinematic color grading
+
+      </p>
+      <a href="#" class="btn">Aplicar</a>
+    </div>
+
+    <div class="card">
+      <h3>05. Professional Secrets</h3>
+      <p>
+        Técnicas como regra 10:10, double diffusion e CPL para controle total
+        de reflexos e simetria.
+      </p>
+      <a href="#" class="btn">Aprender</a>
+    </div>
+
+    <div class="card">
+      <h3>06. Aplicação Comercial</h3>
+      <p>
+        Estratégias para e-commerce, atacado e campanhas que aumentam
+        conversão e percepção de valor.
+      </p>
+      <a href="#" class="btn">Ver Estratégias</a>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const card = button.closest('.card');
+        const textToCopy = card.querySelector('p').innerText;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalText = button.innerText;
+            button.innerText = 'Copiado!';
+            button.style.backgroundColor = '#28a745';
+            
+            setTimeout(() => {
+                button.innerText = originalText;
+                button.style.backgroundColor = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Erro ao copiar: ', err);
+        });
+    });
+});
+</script>
+
+</body>
+
+</html>
