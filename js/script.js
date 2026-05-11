@@ -1,3 +1,5 @@
+console.log("Meu JS Está funcionando")
+
 document.addEventListener('click', async (event) => {
     // Verifica se o elemento clicado (ou o pai dele) é o botão de cópia
     const btn = event.target.closest('.copy-btn');
